@@ -1,36 +1,167 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌳 Linktree Clone
+
+> A beautiful Linktree-style bio link page builder built with **Next.js + React + MongoDB**.
+
+Create your own personalized link page — just like Linktree — where you can showcase all your social media accounts, websites, and important links in one clean, shareable page. All data stays **100% local** on your machine.
+
+---
+
+## Features
+
+- **Add Multiple Links** — Add all your social accounts and important URLs
+- **Personalized Profile Page** — Custom handle-based public page (e.g., `/yourname`)
+- **Profile Info** — Display your name, bio, and profile picture
+- **Copy Links** — One-click copy for any link
+- **Clean UI** — Minimal, modern, and responsive design
+- **Landing Page** — Beautiful homepage to create your link page
+- **Fully Local** — Everything runs on your own computer
+
+---
+
+## Tech Stack
+
+| Technology | Purpose |
+|-----------|---------|
+| [Next.js](https://nextjs.org/) | React Framework & Routing |
+| [React](https://react.dev/) | UI Library |
+| [MongoDB](https://www.mongodb.com/) | Database for storing links & profiles |
+| [Tailwind CSS](https://tailwindcss.com/) | Styling |
+
+---
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to run the project locally on your machine.
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [MongoDB](https://www.mongodb.com/try/download/community) (running locally)
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Zahid207/Linktree-Clone.git
+cd Linktree-Clone
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure Environment Variables
+
+Create a `.env.local` file in the root directory and add your MongoDB connection:
+
+```env
+MONGODB_URI=mongodb://localhost:27017/linktree
+NEXT_PUBLIC_HOST=http://localhost:3000
+```
+
+> **Note:** This is a local project. MongoDB runs on your own machine, so your data never leaves your computer.
+
+### 4. Start the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The app will be available at `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 5. Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+Linktree-Clone/
+├── app/
+│   ├── [handle]/              # Dynamic route for user profile pages (page.js)
+│   ├── api/
+│   │   └── add/               # API route to save links & profile (route.js)
+│   ├── generate/              # Link generation form page (page.js)
+│   ├── globals.css            # Tailwind global styles
+│   ├── layout.js              # Root layout
+│   └── page.js                # Landing page
+├── components/
+│   └── Navbar.js              # Navigation component
+├── lib/
+│   └── mongodb.js             # MongoDB connection configuration
+├── public/                    # Static assets
+├── screenShoot/               # Screenshots folder
+│   ├── form_fill_up_page.png
+│   ├── landing_page.png
+│   └── linktree_page.png
+├── .env.local                 # Environment variables
+├── next.config.mjs            # Next.js configuration
+└── package.json               # Dependencies
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 
+ How to Use
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Open the App**
+   - Go to `http://localhost:3000`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Fill Your Profile**
+   - Enter your name, bio, and profile picture URL
+   - Add your social media links (Facebook, Instagram, Twitter, GitHub, etc.)
+   - Choose a custom handle (e.g., `zahid`)
+
+3. **Generate Your Page**
+   - Click **Generate** to create your personalized link page
+
+4. **Share Your Link**
+   - Your page will be available at `http://localhost:3000/zahid`
+   - Share this link with anyone!
+
+5. **Visit Any Profile**
+   - Just go to `http://localhost:3000/[handle]` to view any created profile
+
+---
+
+## Screenshots
+
+### Landing Page
+The main page where users can fill in their details and generate their personalized link page.
+
+![Landing Page](screenShoot/landing_page.png)
+
+### Form Fill-Up Page
+The form to enter profile information and add social media links.
+
+![Form Page](screenShoot/form_fill_up_page.png)
+
+### Generated Linktree Page
+The final personalized page that others can visit to see all your links.
+
+![Linktree Page](screenShoot/linktree_page.png)
+
+---
+
+## Privacy Note
+
+Since this app runs **locally**:
+
+- All data is stored on your own MongoDB instance
+- No third-party service has access to your links
+- You fully own and control your data
+- Nothing is uploaded to the cloud
+
+
+---
+
+<p align="center">
+  <sub>Made with a lot of ❤️ Love and Care 😊 by <strong>Zahidul</strong></sub>
+</p>
