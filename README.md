@@ -14,7 +14,7 @@ Create your own personalized link page — just like Linktree — where you can 
 - **Copy Links** — One-click copy for any link
 - **Clean UI** — Minimal, modern, and responsive design
 - **Landing Page** — Beautiful homepage to create your link page
-- **Fully Local** — Everything runs on your own computer
+- **Fully Local** — Everything runs on your  own computer
 
 ---
 
